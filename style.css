@@ -1,0 +1,51 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header,
+main,
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    width: 100vw;
+    height: 7vh;
+}
+
+main {
+    width: 100vw;
+    height: 86vh;
+}
+
+.tools {
+    border: 0.1rem solid black;
+    width: 15rem;
+    height: 64rem;
+}
+
+.etch {
+    display: grid;
+    flex-flow: row wrap;
+    border: 0.1rem solid black;
+    width: 64rem;
+    height: 64rem;
+    margin: 0 0 0 2rem;
+}
+
+.pixelFill {
+    background-color: black;
+}
+
+footer {
+    width: 100vw;
+    height: 7vh;
+}
