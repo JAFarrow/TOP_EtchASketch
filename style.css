@@ -30,19 +30,27 @@ main {
     border: 0.1rem solid black;
     width: 15rem;
     height: 64rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
-.etch {
+.tools button {
+    height: 6rem;
+    width: 6rem;
+    border: 0.1rem solid black;
+    border-radius: 100%;
+    margin: 6rem 0 0 0;
+}
+
+#etch {
     display: grid;
     flex-flow: row wrap;
     border: 0.1rem solid black;
     width: 64rem;
     height: 64rem;
     margin: 0 0 0 2rem;
-}
-
-.pixelFill {
-    background-color: black;
 }
 
 footer {
