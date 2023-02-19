@@ -1,6 +1,8 @@
 const container = document.getElementById('etch');
-let blackFillTrue = 1;
-let colourFillTrue = 0; 
+let trigger = false;
+let blackFillTrue = true;
+let colourFillTrue = false;
+document.getElementById('rangeValue').innerHTML = "16 x 16"; 
 window.onload = gridInit(16);
 window.onload = blackFill();
 
@@ -19,13 +21,22 @@ function gridSweep() {
     }
 }
 
+document.addEventListener('mousedown', () => {
+    trigger = true;
+});
+document.addEventListener('mouseup', () => {
+    trigger = false;
+});
+
 function blackFill () {
     let allPixels = document.querySelectorAll('.pixel');
-    allPixels.forEach((pixel) => {
-        pixel.addEventListener('mouseover', () => {
-            pixel.setAttribute('style', 'background-color: #000000;')
+        allPixels.forEach((pixel) => {
+            pixel.addEventListener('mouseover', () => {
+                if (trigger == true) {
+                    pixel.setAttribute('style', 'background-color: #000000;')
+                }    
+            })
         })
-    })
 }
 
 function randomColour () {
@@ -35,31 +46,42 @@ function randomColour () {
 
 function colourFill () {
     let allPixels = document.querySelectorAll('.pixel');
-    allPixels.forEach((pixel) => {
-        pixel.addEventListener('mouseover', () => {
-            pixel.setAttribute('style', `background-color: #${randomColour()};`)
+        allPixels.forEach((pixel) => {
+            pixel.addEventListener('mouseover', () => {
+                if (trigger == true) {
+                    pixel.setAttribute('style', `background-color: #${randomColour()};`)
+                }
+            })
         })
-    })
 }
 
 document.getElementById('rangeSlider').addEventListener('change', function (e) {
     gridSweep();
     gridInit(this.value);
-    if (blackFillTrue == 1 && colourFillTrue == 0) {
-        blackFill();
-    } else if (blackFillTrue == 0 && colourFillTrue == 1) {
-        colourFill();
+    document.getElementById('rangeValue').innerHTML = `${this.value} x ${this.value}`;
+    if (blackFillTrue == true && colourFillTrue == false) {
+        blackFillToggle();
+    } else if (blackFillTrue == false && colourFillTrue == true) {
+        colourFillToggle();
     }
 })
 
-document.getElementById('blackFill').addEventListener('click', () => {
-    blackFillTrue = 1;
-    colourFillTrue = 0;
+function blackFillToggle () {
+    blackFillTrue = true;
+    colourFillTrue = false;
     blackFill();
+}
+
+document.getElementById('blackFill').addEventListener('click', () => {
+    blackFillToggle();
 })
 
-document.getElementById('colourFill').addEventListener('click', () => {
-    blackFillTrue = 0;
-    colourFillTrue = 1;
+function colourFillToggle () {
+    blackFillTrue = false;
+    colourFillTrue = true;
     colourFill();
+}
+
+document.getElementById('colourFill').addEventListener('click', () => {
+    colourFillToggle();
 })

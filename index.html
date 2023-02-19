@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <title>EtchASketch</title>
 </head>
-<body>
+<body ondragstart="return false;">
     <header>
         <h1>EtchASketch</h1>
     </header>
@@ -20,10 +20,15 @@
             <button id="colourFill"></button>
             <br>
             <label for="colourFill">RGB Marker</label>
-            <input type="range" id="rangeSlider" min="1" value="16" max="64" step="1">
-            </datalist>
+            <button id="eraser"></button>
             <br>
-            <output id="rangeValue"></output>
+            <label for="eraser">Eraser</label>
+            <button id="reset"></button>
+            <br>
+            <label for="reset">Reset</label>
+            <input type="range" id="rangeSlider" min="1" value="16" max="64" step="1">
+            <br>
+            <label for="rangeSlider" id="rangeValue"></label>
         </div>
         <div id="etch">
 

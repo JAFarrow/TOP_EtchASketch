@@ -41,7 +41,11 @@ main {
     width: 6rem;
     border: 0.1rem solid black;
     border-radius: 100%;
-    margin: 6rem 0 0 0;
+    margin: 4.5rem 0 0 0;
+}
+
+.tools input {
+    margin: 4.5rem 0 0 0;
 }
 
 #etch {
