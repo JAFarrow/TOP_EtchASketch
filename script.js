@@ -124,3 +124,18 @@ document.getElementById('reset').addEventListener('click', () => {
     gridInit(gridSize);
     pointerAction();
 }) 
+
+let allButtons = document.querySelectorAll('.button');
+
+function clearOutline () {
+    allButtons.forEach((button) => {
+        button.setAttribute('style', 'border: 0.1rem solid #c2bfb8;')
+    })
+};
+
+allButtons.forEach((button) => {
+    button.addEventListener('click', function() {
+        clearOutline();
+        this.setAttribute('style', 'border: 0.4rem solid #80d4ff;')
+    })
+})

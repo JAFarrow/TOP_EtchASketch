@@ -7,6 +7,15 @@ body {
     padding: 0;
 }
 
+h1 {
+    font-size: 2.6rem;
+}
+
+
+h3 {
+    font-size: 1.8rem;
+}
+
 header,
 main,
 footer {
@@ -19,45 +28,69 @@ header {
     text-align: center;
     width: 100vw;
     height: 7vh;
+    background-color: #2e3546;
+    color: #e0ddd5;
 }
 
 main {
     width: 100vw;
     height: 86vh;
+    background-color: #e0ddd5;
 }
 
 .tools {
-    border: 0.1rem solid black;
+    margin: 0 8rem 0 0;
     width: 15rem;
     height: 64rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    font-size: 1.6rem;
+    color: #2e3546;
 }
 
 .tools button {
-    height: 6rem;
-    width: 6rem;
-    border: 0.1rem solid black;
+    height: 5.5rem;
+    width: 5.5rem;
+    border: 0.1rem solid #c2bfb8;
     border-radius: 100%;
-    margin: 4.5rem 0 0 0;
+    margin: 3.5rem 0 0 0;
 }
 
 .tools input {
     margin: 4.5rem 0 0 0;
 }
 
+#blackFill {
+    background-color: #000;
+}
+
+#colourFill {
+    background: no-repeat center url(./images/rgb.png);
+}
+
+#eraser {
+    background-color: #FFF;
+}
+
+#reset {
+    background-color: #FFF;
+}
+
 #etch {
     display: grid;
     flex-flow: row wrap;
-    border: 0.1rem solid black;
-    width: 64rem;
-    height: 64rem;
+    box-shadow: 0.6rem 0.5rem 0.5rem 0 #c2bfb8;
+    width: 56rem;
+    height: 56rem;
     margin: 0 0 0 2rem;
+    background-color: #FFF;
 }
 
 footer {
     width: 100vw;
     height: 7vh;
+    background-color: #2e3546;
+    color: #e0ddd5;
 }
