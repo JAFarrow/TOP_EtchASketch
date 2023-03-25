@@ -64,6 +64,7 @@ main {
 
 #blackFill {
     background-color: #000;
+    border: 0.4rem solid #80d4ff;
 }
 
 #colourFill {
